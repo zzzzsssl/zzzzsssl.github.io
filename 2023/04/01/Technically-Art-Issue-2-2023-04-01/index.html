@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/header.jpg">
+  <link rel="icon" href="/img/header.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="朱士林">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="I&#39;ll be giving a talk at #GDC on @Naughty_Dog&#39;s post system, used for picking good spots in the game world for AI &amp; gameplay purposes (kind of like Unreal&#39;s EQS if you&#39;re familiar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Technically Art: Issue 2 (2023.04.01)">
+<meta property="og:url" content="http://example.com/2023/04/01/Technically-Art-Issue-2-2023-04-01/index.html">
+<meta property="og:site_name" content="shilin blog">
+<meta property="og:description" content="I&#39;ll be giving a talk at #GDC on @Naughty_Dog&#39;s post system, used for picking good spots in the game world for AI &amp; gameplay purposes (kind of like Unreal&#39;s EQS if you&#39;re familiar">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/Issue002.png">
+<meta property="article:published_time" content="2023-04-01T06:57:03.000Z">
+<meta property="article:modified_time" content="2023-04-01T07:23:41.495Z">
+<meta property="article:author" content="朱士林">
+<meta property="article:tag" content="Technical Art">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Issue002.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Technically Art: Issue 2 (2023.04.01) - shilin blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:creator" content="@YourName">
+  <meta name="twitter:title" content=" | " />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="" />
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shilin blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Technically Art: Issue 2 (2023.04.01)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-01 14:57" pubdate>
+          April 1, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.9k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          50 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Technically Art: Issue 2 (2023.04.01)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;ll be giving a talk at <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GDC?src=hash&amp;ref_src=twsrc%5Etfw">#GDC</a> on <a target="_blank" rel="noopener" href="https://twitter.com/Naughty_Dog?ref_src=twsrc%5Etfw">@Naughty_Dog</a>&#39;s post system, used for picking good spots in the game world for AI &amp; gameplay purposes (kind of like Unreal&#39;s EQS if you&#39;re familiar with that). <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GDC2023?src=hash&amp;ref_src=twsrc%5Etfw">#GDC2023</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GameDev?src=hash&amp;ref_src=twsrc%5Etfw">#GameDev</a> <a target="_blank" rel="noopener" href="https://t.co/a3hY0bOLfS">pic.twitter.com/a3hY0bOLfS</a></p>&mdash; Ming-Lun “Allen” Chou (@TheAllenChou) <a target="_blank" rel="noopener" href="https://twitter.com/TheAllenChou/status/1631917840906469377?ref_src=twsrc%5Etfw">March 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="pl" dir="ltr"><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/%E3%81%A4%E3%81%B6%E3%82%84%E3%81%8DGLSL?src=hash&amp;ref_src=twsrc%5Etfw">#つぶやきGLSL</a><br>float e,i,a,w,x,g;for(;i++&lt;1e2;){vec3 p=vec3((FC.xy-.5*r)/r.y*g,g-3.);p.zy*=rotate2D(.6);i&lt;1e2?p:p+=1e-4;e=p.y;for(a=.8;a&gt;.003;a*=.8)p.xz*=rotate2D(5.),x=(++p.x+p.z)/a+t+t,w=exp(sin(x)-2.5)*a,o.gb+=w/4e2,p.xz-=w*cos(x),e-=w;g+=e;}o+=min(e*e*4e6,1./g)+g*g/2e2; <a target="_blank" rel="noopener" href="https://t.co/dJaHL7WjeY">pic.twitter.com/dJaHL7WjeY</a></p>&mdash; yonatan (@zozuar) <a target="_blank" rel="noopener" href="https://twitter.com/zozuar/status/1632160439944478721?ref_src=twsrc%5Etfw">March 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">マテリアルのお勉強。いい感じだけど、まだいまいちDotの使い方は把握していない.... <a target="_blank" rel="noopener" href="https://t.co/Dt2TsN0JhI">pic.twitter.com/Dt2TsN0JhI</a></p>&mdash; YukiYa 🇯🇵→🇨🇦 soon (@ko_yuki_lo) <a target="_blank" rel="noopener" href="https://twitter.com/ko_yuki_lo/status/1632273987156996096?ref_src=twsrc%5Etfw">March 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Are you creating a platform game? Here&#39;s an example of procedural water + player interaction you can use as a reference! Want to learn about <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unity2d?src=hash&amp;ref_src=twsrc%5Etfw">#unity2d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/shader?src=hash&amp;ref_src=twsrc%5Etfw">#shader</a> ?<br><br>🌊Get our book here,<a target="_blank" rel="noopener" href="https://t.co/KfSpLg2QSU">https://t.co/KfSpLg2QSU</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gameart?src=hash&amp;ref_src=twsrc%5Etfw">#gameart</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/procedural?src=hash&amp;ref_src=twsrc%5Etfw">#procedural</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/realtimeVFX?src=hash&amp;ref_src=twsrc%5Etfw">#realtimeVFX</a> <a target="_blank" rel="noopener" href="https://t.co/dRAxtu2MmX">pic.twitter.com/dRAxtu2MmX</a></p>&mdash; The Unity Shaders Bible (@ushadersbible) <a target="_blank" rel="noopener" href="https://twitter.com/ushadersbible/status/1632608772370702338?ref_src=twsrc%5Etfw">March 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I tried creating a proof-of-concept implementation of a ChatGPT-powered shader generator for Unity.<a target="_blank" rel="noopener" href="https://t.co/HQp7oqLAvC">https://t.co/HQp7oqLAvC</a> <a target="_blank" rel="noopener" href="https://t.co/O1o1H1910g">pic.twitter.com/O1o1H1910g</a></p>&mdash; Keijiro Takahashi (@_kzr) <a target="_blank" rel="noopener" href="https://twitter.com/_kzr/status/1632634562399600640?ref_src=twsrc%5Etfw">March 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">.<a target="_blank" rel="noopener" href="https://twitter.com/boredblndrartst?ref_src=twsrc%5Etfw">@boredblndrartst</a> presented a neat Blender-made procedural material that mimics the physical characteristics of an LED display when captured on camera.<br><br>Learn more and purchase for $1: <a target="_blank" rel="noopener" href="https://t.co/Kx7ixLEepZ">https://t.co/Kx7ixLEepZ</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/blender3d?src=hash&amp;ref_src=twsrc%5Etfw">#blender3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/b3d?src=hash&amp;ref_src=twsrc%5Etfw">#b3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/3dart?src=hash&amp;ref_src=twsrc%5Etfw">#3dart</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/proceduralart?src=hash&amp;ref_src=twsrc%5Etfw">#proceduralart</a> <a target="_blank" rel="noopener" href="https://t.co/g99s0VkHFA">pic.twitter.com/g99s0VkHFA</a></p>&mdash; 80 LEVEL (@80Level) <a target="_blank" rel="noopener" href="https://twitter.com/80Level/status/1633361917157974018?ref_src=twsrc%5Etfw">March 8, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here are a few examples of the different types of decal materials I created using <a target="_blank" rel="noopener" href="https://twitter.com/Substance3D?ref_src=twsrc%5Etfw">@Substance3D</a> on the production of <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/TheLastOfUs?src=hash&amp;ref_src=twsrc%5Etfw">#TheLastOfUs</a>. These textures were quite handy to add damages on concrete edges or broken wood pieces.<br>More breakdown on <a target="_blank" rel="noopener" href="https://twitter.com/ArtStationHQ?ref_src=twsrc%5Etfw">@ArtStationHQ</a>: <a target="_blank" rel="noopener" href="https://t.co/RTE8jZpZN6">https://t.co/RTE8jZpZN6</a> <a target="_blank" rel="noopener" href="https://t.co/OxGlaSHSYv">pic.twitter.com/OxGlaSHSYv</a></p>&mdash; Jonathan BENAINOUS (@JonathanBenaino) <a target="_blank" rel="noopener" href="https://twitter.com/JonathanBenaino/status/1633537557307985920?ref_src=twsrc%5Etfw">March 8, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Excited to announce that I&#39;ll be presenting at <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GDC2023?src=hash&amp;ref_src=twsrc%5Etfw">#GDC2023</a> on joint-based skin deformation in <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GodOfWarRagnarok?src=hash&amp;ref_src=twsrc%5Etfw">#GodOfWarRagnarok</a>. Join me to learn about our systematic rig and dynamic bone technique for achieving realistic muscle and skin jiggle effects. <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/animation?src=hash&amp;ref_src=twsrc%5Etfw">#animation</a><a target="_blank" rel="noopener" href="https://t.co/mmMyy1VmrR">https://t.co/mmMyy1VmrR</a> <a target="_blank" rel="noopener" href="https://t.co/zdsvpZX6ML">pic.twitter.com/zdsvpZX6ML</a></p>&mdash; Tenghao Wang (@tenghao_wang) <a target="_blank" rel="noopener" href="https://twitter.com/tenghao_wang/status/1632641408929787906?ref_src=twsrc%5Etfw">March 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The splash art shader I made for Tomb Raider Reloaded. It uses some edge detection and gradient maps to create the sketchy look. It transitions from all white, to pencil work, values, then the final render.<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/VFX?src=hash&amp;ref_src=twsrc%5Etfw">#VFX</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/MadeWithUnity?src=hash&amp;ref_src=twsrc%5Etfw">#MadeWithUnity</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/realtimeVFX?src=hash&amp;ref_src=twsrc%5Etfw">#realtimeVFX</a> <a target="_blank" rel="noopener" href="https://t.co/Sz0CrNGsVT">pic.twitter.com/Sz0CrNGsVT</a></p>&mdash; Gregory Oliveira (@godsgreg) <a target="_blank" rel="noopener" href="https://twitter.com/godsgreg/status/1633922128658714624?ref_src=twsrc%5Etfw">March 9, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🪡 little sewing scene I made in Blender a while back, looking at it now I probably went overboard with the fuzz on the leather but oh well 😅<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/b3d?src=hash&amp;ref_src=twsrc%5Etfw">#b3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/3D?src=hash&amp;ref_src=twsrc%5Etfw">#3D</a> <a target="_blank" rel="noopener" href="https://t.co/xsNfCKvZiO">pic.twitter.com/xsNfCKvZiO</a></p>&mdash; Sabrina Garcia (@sab_3d) <a target="_blank" rel="noopener" href="https://twitter.com/sab_3d/status/1633964045857439745?ref_src=twsrc%5Etfw">March 9, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I saw this Rain shader ( <a target="_blank" rel="noopener" href="https://t.co/kd37GLlQxp">https://t.co/kd37GLlQxp</a> ) and I loved it! 😍<br>I ported to HLSL and to <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> nodes too. Best part it works with anything, over other materials, postprocess raining on camera, skeletal mesh with material overlay.<br>--<br>(source code 🧵👇) <a target="_blank" rel="noopener" href="https://t.co/br9CxN4CAP">pic.twitter.com/br9CxN4CAP</a></p>&mdash; DarknessFX (@DrkFX) <a target="_blank" rel="noopener" href="https://twitter.com/DrkFX/status/1634019872337215489?ref_src=twsrc%5Etfw">March 10, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are proud to introduce Wonder Studio.<br><br>An AI tool that automatically animates, lights and composes CG characters into a live-action scene. No complicated 3D software, no expensive production hardware—all you need is a camera.<br><br>Sign up for closed beta at <a target="_blank" rel="noopener" href="https://t.co/QPyOVMjEAy">https://t.co/QPyOVMjEAy</a> <a target="_blank" rel="noopener" href="https://t.co/aHf2bLTsgZ">pic.twitter.com/aHf2bLTsgZ</a></p>&mdash; Wonder Dynamics (@WonderDynamics) <a target="_blank" rel="noopener" href="https://twitter.com/WonderDynamics/status/1633627396971827200?ref_src=twsrc%5Etfw">March 9, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">TIL learned you can load map data right into Houdini. that is so neat 🤓 <a target="_blank" rel="noopener" href="https://t.co/IgkYI0Ra9I">pic.twitter.com/IgkYI0Ra9I</a></p>&mdash; Ben Voldman (@benvoldman) <a target="_blank" rel="noopener" href="https://twitter.com/benvoldman/status/1630314562397384710?ref_src=twsrc%5Etfw">February 27, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Made a huge tutorial on how to make a water shader in Unity 💦 <br><br>This took a while to make and I put in almost everything I know about stylized water shaders. <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a target="_blank" rel="noopener" href="https://t.co/hZV34BxqIA">pic.twitter.com/hZV34BxqIA</a></p>&mdash; Alex Ameye (@alexanderameye) <a target="_blank" rel="noopener" href="https://twitter.com/alexanderameye/status/1633737686342152192?ref_src=twsrc%5Etfw">March 9, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📝Just a reminder of the importance of taking a few minutes to create helpers and tools to make our lives easier when animating. <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/c4d?src=hash&amp;ref_src=twsrc%5Etfw">#c4d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/3d?src=hash&amp;ref_src=twsrc%5Etfw">#3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/animation?src=hash&amp;ref_src=twsrc%5Etfw">#animation</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/motion?src=hash&amp;ref_src=twsrc%5Etfw">#motion</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/tricks?src=hash&amp;ref_src=twsrc%5Etfw">#tricks</a> I hope to finish this personal project before a new gig shows up. <a target="_blank" rel="noopener" href="https://t.co/xwMYoYaLDg">pic.twitter.com/xwMYoYaLDg</a></p>&mdash; Victor V. (@vic_ver) <a target="_blank" rel="noopener" href="https://twitter.com/vic_ver/status/1633892168363286528?ref_src=twsrc%5Etfw">March 9, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Broken glass I made some years ago in <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/substance3ddesigner?src=hash&amp;ref_src=twsrc%5Etfw">#substance3ddesigner</a> <a target="_blank" rel="noopener" href="https://t.co/0zBVeVMqaH">pic.twitter.com/0zBVeVMqaH</a></p>&mdash; Jaakko Saari (@crwjaakko) <a target="_blank" rel="noopener" href="https://twitter.com/crwjaakko/status/1635267319130906627?ref_src=twsrc%5Etfw">March 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Daryll Española shared the workflow behind the Dark Liquid Burst project, explained how to create liquid-like shading, and showed how the explosions were made with Niagara:<a target="_blank" rel="noopener" href="https://t.co/uBdF3fbwnV">https://t.co/uBdF3fbwnV</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/vfx?src=hash&amp;ref_src=twsrc%5Etfw">#vfx</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/visualeffects?src=hash&amp;ref_src=twsrc%5Etfw">#visualeffects</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unrealengine5?src=hash&amp;ref_src=twsrc%5Etfw">#unrealengine5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ue5?src=hash&amp;ref_src=twsrc%5Etfw">#ue5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unrealengine?src=hash&amp;ref_src=twsrc%5Etfw">#unrealengine</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/niagara?src=hash&amp;ref_src=twsrc%5Etfw">#niagara</a> <a target="_blank" rel="noopener" href="https://twitter.com/UnrealEngine?ref_src=twsrc%5Etfw">@UnrealEngine</a> <a target="_blank" rel="noopener" href="https://t.co/IXdGhfbHzS">pic.twitter.com/IXdGhfbHzS</a></p>&mdash; 80 LEVEL (@80Level) <a target="_blank" rel="noopener" href="https://twitter.com/80Level/status/1635702333081554944?ref_src=twsrc%5Etfw">March 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">i&#39;ve been painting and putting together this little pixel 3d world<br><br>it&#39;s not a game yet.. <br><br>(but RT if you&#39;d play it 😇)<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a target="_blank" rel="noopener" href="https://t.co/YAyfdYv2AW">pic.twitter.com/YAyfdYv2AW</a></p>&mdash; thomas ⛰ vandenberg (🔜 PAX East) (@noio_games) <a target="_blank" rel="noopener" href="https://twitter.com/noio_games/status/1635650985828790272?ref_src=twsrc%5Etfw">March 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Mountains in &lt;1 min? Added a new <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/Gaea?src=hash&amp;ref_src=twsrc%5Etfw">#Gaea</a> preset to <a target="_blank" rel="noopener" href="https://twitter.com/sidefxlabs?ref_src=twsrc%5Etfw">@sidefxlabs</a> 19.5.556+ that directly creates a sexy mountain using just a default <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/Houdini?src=hash&amp;ref_src=twsrc%5Etfw">#Houdini</a> HeightField as input. <a target="_blank" rel="noopener" href="https://twitter.com/quadspinner?ref_src=twsrc%5Etfw">@quadspinner</a> <a target="_blank" rel="noopener" href="https://twitter.com/daxpandhi?ref_src=twsrc%5Etfw">@daxpandhi</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ProceduralArt?src=hash&amp;ref_src=twsrc%5Etfw">#ProceduralArt</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/TechArt?src=hash&amp;ref_src=twsrc%5Etfw">#TechArt</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/3D?src=hash&amp;ref_src=twsrc%5Etfw">#3D</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UE?src=hash&amp;ref_src=twsrc%5Etfw">#UE</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <br><br>A few quick tips below... <a target="_blank" rel="noopener" href="https://t.co/HMhi6ovu4A">pic.twitter.com/HMhi6ovu4A</a></p>&mdash; Mai Ao (@aomai01) <a target="_blank" rel="noopener" href="https://twitter.com/aomai01/status/1636425474518728708?ref_src=twsrc%5Etfw">March 16, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A small <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/kaiju?src=hash&amp;ref_src=twsrc%5Etfw">#kaiju</a> exercise...err...big kaiju exercise? 🤔 or a gorilla cat 🤷‍♂️<br><br>Super fun Lac Beast <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/animation?src=hash&amp;ref_src=twsrc%5Etfw">#animation</a> rig from <a target="_blank" rel="noopener" href="https://twitter.com/KielFiggins?ref_src=twsrc%5Etfw">@KielFiggins</a>! <a target="_blank" rel="noopener" href="https://t.co/wLspzLQbzY">pic.twitter.com/wLspzLQbzY</a></p>&mdash; Shawn Wilson (@jitterbot) <a target="_blank" rel="noopener" href="https://twitter.com/jitterbot/status/1638227227879043073?ref_src=twsrc%5Etfw">March 21, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The new PCG Tools looks amazing. I love this stuff, can&#39;t wait to learn more about it.<br><br>I&#39;ve been working with procedural tools for world building for the last 5-6 years.<br><br>and it&#39;s really nice to see more of this stuff being developed &lt;3<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/PCG?src=hash&amp;ref_src=twsrc%5Etfw">#PCG</a> <a target="_blank" rel="noopener" href="https://t.co/O4qdBiyBBR">pic.twitter.com/O4qdBiyBBR</a></p>&mdash; Chris Radsby (@chrisradsby) <a target="_blank" rel="noopener" href="https://twitter.com/chrisradsby/status/1638804212267241473?ref_src=twsrc%5Etfw">March 23, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Weird things going on in the capture that I can&#39;t figure out. <br>I was really happy with how the balconies and windows turned out. Some fun accidents. <a target="_blank" rel="noopener" href="https://t.co/LpbU7Kl4X2">pic.twitter.com/LpbU7Kl4X2</a></p>&mdash; Paul Svoboda (@paulsvoboda) <a target="_blank" rel="noopener" href="https://twitter.com/paulsvoboda/status/1640861673379762176?ref_src=twsrc%5Etfw">March 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Prototyping surface rain effects directly in Niagara, using Grid2D. <br>Fully parameter driven - no textures used and hence there is no visible repetition. The final result is just a normap map.<br>What do you think? Worth it?<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/rain?src=hash&amp;ref_src=twsrc%5Etfw">#rain</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/shaders?src=hash&amp;ref_src=twsrc%5Etfw">#shaders</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/vfx?src=hash&amp;ref_src=twsrc%5Etfw">#vfx</a> <a target="_blank" rel="noopener" href="https://t.co/GiTteWa21r">pic.twitter.com/GiTteWa21r</a></p>&mdash; Dmitry Karpukhin (@skx_doom) <a target="_blank" rel="noopener" href="https://twitter.com/skx_doom/status/1641427274263146497?ref_src=twsrc%5Etfw">March 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Lighting exercise with Unreal Engine 5 🌟<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/EldenRing?src=hash&amp;ref_src=twsrc%5Etfw">#EldenRing</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/EldenRingFanart?src=hash&amp;ref_src=twsrc%5Etfw">#EldenRingFanart</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine5?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine5</a> <a target="_blank" rel="noopener" href="https://t.co/uJ4V8TZ8yd">pic.twitter.com/uJ4V8TZ8yd</a></p>&mdash; Eugenia.Lysa (@JaneLysa911) <a target="_blank" rel="noopener" href="https://twitter.com/JaneLysa911/status/1641501957394235398?ref_src=twsrc%5Etfw">March 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">すごいチュートリアルがでてきた<br>勉強させてもらおう<a target="_blank" rel="noopener" href="https://t.co/LpGJNvmiGW">https://t.co/LpGJNvmiGW</a></p>&mdash; ポジTA (@posita33) <a target="_blank" rel="noopener" href="https://twitter.com/posita33/status/1641636904943894528?ref_src=twsrc%5Etfw">March 31, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul>
+<li>个人微信公众号： CG VisionTube</li>
+<li>注：学习交流使用！</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Technical-Art/">#Technical Art</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Technically Art: Issue 2 (2023.04.01)</div>
+      <div>http://example.com/2023/04/01/Technically-Art-Issue-2-2023-04-01/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>朱士林</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 1, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/10/HongKong-%E9%A6%99%E6%B8%AF%E8%A1%97%E5%A4%B4%E6%91%84%E5%BD%B1/" title="HongKong-香港街头摄影">
+                        <span class="hidden-mobile">HongKong-香港街头摄影</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://vercel-kohl-ten.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
