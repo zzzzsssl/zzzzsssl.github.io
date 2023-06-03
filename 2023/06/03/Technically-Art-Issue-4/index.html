@@ -1,0 +1,749 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/header.jpg">
+  <link rel="icon" href="/img/header.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="朱士林">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Hui! A new article: The Four Vertex Volume: https:&#x2F;&#x2F;t.co&#x2F;Fzmb9NbW6LAlso features: Laser Knifes! Hope you like it, let me know in the comments!Mentioned: @SebHillaire @Deathreycg torbach#gamedev #vfx #">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Technically Art: Issue 4 (2023.06.03)">
+<meta property="og:url" content="http://example.com/2023/06/03/Technically-Art-Issue-4/index.html">
+<meta property="og:site_name" content="shilin blog">
+<meta property="og:description" content="Hui! A new article: The Four Vertex Volume: https:&#x2F;&#x2F;t.co&#x2F;Fzmb9NbW6LAlso features: Laser Knifes! Hope you like it, let me know in the comments!Mentioned: @SebHillaire @Deathreycg torbach#gamedev #vfx #">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/Issue004.png">
+<meta property="article:published_time" content="2023-06-03T11:13:11.000Z">
+<meta property="article:modified_time" content="2023-06-03T11:35:58.672Z">
+<meta property="article:author" content="朱士林">
+<meta property="article:tag" content="Technical Art">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Issue004.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Technically Art: Issue 4 (2023.06.03) - shilin blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:creator" content="@YourName">
+  <meta name="twitter:title" content=" | " />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="" />
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>shilin blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Technically Art: Issue 4 (2023.06.03)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-03 19:13" pubdate>
+          June 3, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          60 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> views
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Technically Art: Issue 4 (2023.06.03)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hui! A new article: The Four Vertex Volume: <a target="_blank" rel="noopener" href="https://t.co/Fzmb9NbW6L">https://t.co/Fzmb9NbW6L</a><br>Also features: Laser Knifes! Hope you like it, let me know in the comments!<br>Mentioned: <a target="_blank" rel="noopener" href="https://twitter.com/SebHillaire?ref_src=twsrc%5Etfw">@SebHillaire</a> <a target="_blank" rel="noopener" href="https://twitter.com/Deathreycg?ref_src=twsrc%5Etfw">@Deathreycg</a> torbach<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/vfx?src=hash&amp;ref_src=twsrc%5Etfw">#vfx</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/realtimevfx?src=hash&amp;ref_src=twsrc%5Etfw">#realtimevfx</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/starwars?src=hash&amp;ref_src=twsrc%5Etfw">#starwars</a> <a target="_blank" rel="noopener" href="https://t.co/ccgP8xu849">pic.twitter.com/ccgP8xu849</a></p>&mdash; Simonschreibt (@simonschreibt) <a target="_blank" rel="noopener" href="https://twitter.com/simonschreibt/status/1652721629519134722?ref_src=twsrc%5Etfw">April 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">At <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/SIGGRAPH?src=hash&amp;ref_src=twsrc%5Etfw">#SIGGRAPH</a> 2023 we will show how to extend microfacet theory to handle height-varying roughness and material, in order to derive new BSDFs for asymmetric heightfields such as eroded and damaged surfaces. 1/n<a target="_blank" rel="noopener" href="https://t.co/LU4XRMGQ7v">https://t.co/LU4XRMGQ7v</a> <a target="_blank" rel="noopener" href="https://t.co/nQylLcSwA5">pic.twitter.com/nQylLcSwA5</a></p>&mdash; Eugene d&#39;Eon (@ejdeon) <a target="_blank" rel="noopener" href="https://twitter.com/ejdeon/status/1653496909615738880?ref_src=twsrc%5Etfw">May 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">UnrealEngineで使用する基本的なノード一覧を5ページに渡ってblueprintUEのリンク付きでまとめました✍🏻暇な時にでもチェックしてみてください! <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> <a target="_blank" rel="noopener" href="https://t.co/AvjPLswhdi">https://t.co/AvjPLswhdi</a> <a target="_blank" rel="noopener" href="https://t.co/vrpqVM38Ae">pic.twitter.com/vrpqVM38Ae</a></p>&mdash; daichi_gamedev (@daichi_gamedev) <a target="_blank" rel="noopener" href="https://twitter.com/daichi_gamedev/status/1653415294621327361?ref_src=twsrc%5Etfw">May 2, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I found some free time and revised the cobweb hda. This is a new version that will create the branching setup and work as a pre-process for a simple vellum sim. This will help to emulate tension and achieve more realisitic results. <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/houdini?src=hash&amp;ref_src=twsrc%5Etfw">#houdini</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/3d?src=hash&amp;ref_src=twsrc%5Etfw">#3d</a> <a target="_blank" rel="noopener" href="https://t.co/aZQqkdwuEP">pic.twitter.com/aZQqkdwuEP</a></p>&mdash; Jose_L_Molfino (@Jose_Molfino) <a target="_blank" rel="noopener" href="https://twitter.com/Jose_Molfino/status/1654105634701230083?ref_src=twsrc%5Etfw">May 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Slicing ANY mesh (visual) with 2 lines of HLSL.<br><br>if (dot(worldPos - planePos, planeNorm)) &gt; 0.0<br> discard (the pixel, or clip alpha) ⭕🌠<br><br>Mesh back faces can be stencil masked with the plane to &#39;project&#39; a texture as the clipped surface.<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unitytips?src=hash&amp;ref_src=twsrc%5Etfw">#unitytips</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://t.co/mKOUN1MQkj">pic.twitter.com/mKOUN1MQkj</a></p>&mdash; Mirza Beig (@TheMirzaBeig) <a target="_blank" rel="noopener" href="https://twitter.com/TheMirzaBeig/status/1654067009162731520?ref_src=twsrc%5Etfw">May 4, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here&#39;s the updated getaway car in-game!<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://t.co/2tnSdyjuL6">pic.twitter.com/2tnSdyjuL6</a></p>&mdash; Nick Carver (@NickDCarver) <a target="_blank" rel="noopener" href="https://twitter.com/NickDCarver/status/1654818622802468864?ref_src=twsrc%5Etfw">May 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">gameplay in <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UE5?src=hash&amp;ref_src=twsrc%5Etfw">#UE5</a> showing a Martian dust devil and mega-storm made with <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/EmberGen?src=hash&amp;ref_src=twsrc%5Etfw">#EmberGen</a> &amp; using basic flipbooks/sprites in-game <a target="_blank" rel="noopener" href="https://t.co/lZFF1FAc1i">pic.twitter.com/lZFF1FAc1i</a></p>&mdash; Jason Key (@key_vfx) <a target="_blank" rel="noopener" href="https://twitter.com/key_vfx/status/1656622837975724033?ref_src=twsrc%5Etfw">May 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine</a> 5.2 is out! You&#39;ve seen how <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/Niagara?src=hash&amp;ref_src=twsrc%5Etfw">#Niagara</a> Fluids are higher quality, faster, can be cached, and have engine-integrated lighting. We also redesigned the user interface so they are far easier to use, and wrote extensive documentation<a target="_blank" rel="noopener" href="https://t.co/ed1rePsvmm">https://t.co/ed1rePsvmm</a><br>Try it out! <a target="_blank" rel="noopener" href="https://t.co/ZQAbY181yC">pic.twitter.com/ZQAbY181yC</a></p>&mdash; Devon Penney (@dmpvfx) <a target="_blank" rel="noopener" href="https://twitter.com/dmpvfx/status/1657088383339106304?ref_src=twsrc%5Etfw">May 12, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">the evolution of the God of War ⛓️ <a target="_blank" rel="noopener" href="https://t.co/5PPHy0h8ex">pic.twitter.com/5PPHy0h8ex</a></p>&mdash; Sony (@Sony) <a target="_blank" rel="noopener" href="https://twitter.com/Sony/status/1657082760199041025?ref_src=twsrc%5Etfw">May 12, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ever wondered how water works in video games? <br><br>As it turns out, there&#39;s a ton of smoke and mirrors in the background, without anyone ever realizing it.<br><br>---&gt; another huge 🧵 <a target="_blank" rel="noopener" href="https://t.co/8QmBmMg4B6">pic.twitter.com/8QmBmMg4B6</a></p>&mdash; Thomas @ Stylized Station (@StylizedStation) <a target="_blank" rel="noopener" href="https://twitter.com/StylizedStation/status/1657401347539361794?ref_src=twsrc%5Etfw">May 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ever wondered how grass is made in video games? <br><br>Making grass may seem simple, but theres actually a lof of history and technology behind this surprisingly complex topic. <br><br>Another big thread 🧵 <a target="_blank" rel="noopener" href="https://t.co/Zbc6zrmgVz">pic.twitter.com/Zbc6zrmgVz</a></p>&mdash; Thomas @ Stylized Station (@StylizedStation) <a target="_blank" rel="noopener" href="https://twitter.com/StylizedStation/status/1658121115829510148?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;m excited to release this new project I&#39;ve been working on for the past few months, focusing on the new UE5.2 substrate material ! <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/UnrealEngine5?src=hash&amp;ref_src=twsrc%5Etfw">#UnrealEngine5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://t.co/2p8UgLMPzC">pic.twitter.com/2p8UgLMPzC</a></p>&mdash; Corentin Demougeot (@UTCompiler) <a target="_blank" rel="noopener" href="https://twitter.com/UTCompiler/status/1658035939527081985?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;ve given my little Tech Art course now 5 times (3x via Zoom, 2x in person) and the feedback was nice. I&#39;ve summarized the content on this page, just in case someone else is interested in this course:<br>▶ <a target="_blank" rel="noopener" href="https://t.co/2UUqWQMmb1">https://t.co/2UUqWQMmb1</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/techart?src=hash&amp;ref_src=twsrc%5Etfw">#techart</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/realtimevfx?src=hash&amp;ref_src=twsrc%5Etfw">#realtimevfx</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/teaching?src=hash&amp;ref_src=twsrc%5Etfw">#teaching</a> <a target="_blank" rel="noopener" href="https://t.co/HTM4SRAYt3">pic.twitter.com/HTM4SRAYt3</a></p>&mdash; Simonschreibt (@simonschreibt) <a target="_blank" rel="noopener" href="https://twitter.com/simonschreibt/status/1658192931751075868?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">making a perspective camera match an orthographic camera 🎥<br><br>orthographic cameras can be thought of as a special case where FoV = 0 - the trick is to decide what to keep fixed when changing FoV. in this case, I fix the near clip height<br><br>try it out here: <a target="_blank" rel="noopener" href="https://t.co/pn1OLSybIH">https://t.co/pn1OLSybIH</a> <a target="_blank" rel="noopener" href="https://t.co/ykWTGFbQgE">pic.twitter.com/ykWTGFbQgE</a></p>&mdash; Freya Holmér (@FreyaHolmer) <a target="_blank" rel="noopener" href="https://twitter.com/FreyaHolmer/status/1658125337849372675?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I didn&#39;t really need any math for my past projects, which was a bonus since me and math have a rough relationship. But as I&#39;m progressing in my game developer journey, I&#39;m back again watching this video series. It is absolute gold. I recommend everyone to watch it. <a target="_blank" rel="noopener" href="https://t.co/eikEQYYZnB">https://t.co/eikEQYYZnB</a></p>&mdash; Kris (@thatDevKris) <a target="_blank" rel="noopener" href="https://twitter.com/thatDevKris/status/1658210608355876954?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Introducing &quot;FFX Geometry Explainer&quot; - the ultimate tool for Houdini educators &amp; learners! Simplify complex concepts &amp; visualize Geometry Components / Attribute Classes effortlessly. <a target="_blank" rel="noopener" href="https://t.co/uV5uITssHF">https://t.co/uV5uITssHF</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/GeometryExplainer?src=hash&amp;ref_src=twsrc%5Etfw">#GeometryExplainer</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/Houdini?src=hash&amp;ref_src=twsrc%5Etfw">#Houdini</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/HoudiniHDA?src=hash&amp;ref_src=twsrc%5Etfw">#HoudiniHDA</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/EducationalTool?src=hash&amp;ref_src=twsrc%5Etfw">#EducationalTool</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/fendrafx?src=hash&amp;ref_src=twsrc%5Etfw">#fendrafx</a> <a target="_blank" rel="noopener" href="https://t.co/97At0liTsp">pic.twitter.com/97At0liTsp</a></p>&mdash; David Torno (@aeioweyou) <a target="_blank" rel="noopener" href="https://twitter.com/aeioweyou/status/1658132070890364929?ref_src=twsrc%5Etfw">May 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The tutorial area is a controlled environment where you can learn all the game&#39;s mechanics and swim around with some fish <a target="_blank" rel="noopener" href="https://t.co/2NTlTb1SFV">pic.twitter.com/2NTlTb1SFV</a></p>&mdash; Khena B (@Khena_B) <a target="_blank" rel="noopener" href="https://twitter.com/Khena_B/status/1657853014592438273?ref_src=twsrc%5Etfw">May 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Here is our <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/SIGGRAPH2023?src=hash&amp;ref_src=twsrc%5Etfw">#SIGGRAPH2023</a> paper on initializing hybrid hair simulations to prevent sagging when the simulation begins with my PhD student <a target="_blank" rel="noopener" href="https://twitter.com/JerryHsu32?ref_src=twsrc%5Etfw">@JerryHsu32</a> and collaborators at Tencent, Tongtong Wang, Zherong Pan, Xifeng Gao, and <a target="_blank" rel="noopener" href="https://twitter.com/kui_wu?ref_src=twsrc%5Etfw">@kui_wu</a>:<a target="_blank" rel="noopener" href="https://t.co/y01rwkAbew">https://t.co/y01rwkAbew</a> <a target="_blank" rel="noopener" href="https://t.co/xZ7GN8mTs0">pic.twitter.com/xZ7GN8mTs0</a></p>&mdash; Cem Yuksel (@cem_yuksel) <a target="_blank" rel="noopener" href="https://twitter.com/cem_yuksel/status/1658583242784768000?ref_src=twsrc%5Etfw">May 16, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">testing out more <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/simulationnodes?src=hash&amp;ref_src=twsrc%5Etfw">#simulationnodes</a> ideas. Purely 2d simulation faked to 3d but could work in many scenes. Whitewater particles modified from the blender demo file. <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/geometrynodes?src=hash&amp;ref_src=twsrc%5Etfw">#geometrynodes</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/b3d?src=hash&amp;ref_src=twsrc%5Etfw">#b3d</a> <a target="_blank" rel="noopener" href="https://t.co/tPegg6mmTR">pic.twitter.com/tPegg6mmTR</a></p>&mdash; Miettinen Jesse - Blenderesse (@JesseMiettinen) <a target="_blank" rel="noopener" href="https://twitter.com/JesseMiettinen/status/1659243045605212185?ref_src=twsrc%5Etfw">May 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Car controller looking good 👍<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/madewithunity?src=hash&amp;ref_src=twsrc%5Etfw">#madewithunity</a> <a target="_blank" rel="noopener" href="https://t.co/oxoW0CMWDa">pic.twitter.com/oxoW0CMWDa</a></p>&mdash; Alex Ameye (@alexanderameye) <a target="_blank" rel="noopener" href="https://twitter.com/alexanderameye/status/1659248571655258128?ref_src=twsrc%5Etfw">May 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In a recent interview by <a target="_blank" rel="noopener" href="https://twitter.com/80Level?ref_src=twsrc%5Etfw">@80Level</a> they had an in-depth coverage of my workflow, in which I tried to succinctly break down the process for this portrait and some of the challenges I had to overcome from start to finish.<a target="_blank" rel="noopener" href="https://t.co/VPz1y0YIxd">https://t.co/VPz1y0YIxd</a><a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ZBrush?src=hash&amp;ref_src=twsrc%5Etfw">#ZBrush</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/Maya?src=hash&amp;ref_src=twsrc%5Etfw">#Maya</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/XGen?src=hash&amp;ref_src=twsrc%5Etfw">#XGen</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ArnoldRender?src=hash&amp;ref_src=twsrc%5Etfw">#ArnoldRender</a> <a target="_blank" rel="noopener" href="https://t.co/PDV9wggPBw">pic.twitter.com/PDV9wggPBw</a></p>&mdash; Hadi Karimi (@HadiKarimi_Art) <a target="_blank" rel="noopener" href="https://twitter.com/HadiKarimi_Art/status/1659209765028007946?ref_src=twsrc%5Etfw">May 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I wrote a blog post on creating render targets for shaders, but without the render target camera overhead.<br><br>Read it here: <a target="_blank" rel="noopener" href="https://t.co/DXsfz5KSZu">https://t.co/DXsfz5KSZu</a>!<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ue5?src=hash&amp;ref_src=twsrc%5Etfw">#ue5</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/ue4?src=hash&amp;ref_src=twsrc%5Etfw">#ue4</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unrealengine?src=hash&amp;ref_src=twsrc%5Etfw">#unrealengine</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/tutorial?src=hash&amp;ref_src=twsrc%5Etfw">#tutorial</a></p>&mdash; Celeste Neukirchen (@CatherineCel) <a target="_blank" rel="noopener" href="https://twitter.com/CatherineCel/status/1660992407217774594?ref_src=twsrc%5Etfw">May 23, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Finally achieved some fluid simulations in Geometry nodes. Still far from perfect tho. WIP.<br>The simulation is &quot;2.5D&quot;, entirely done in Geometry nodes, Blender 3.6<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/geometrynodes?src=hash&amp;ref_src=twsrc%5Etfw">#geometrynodes</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/b3d?src=hash&amp;ref_src=twsrc%5Etfw">#b3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/blender?src=hash&amp;ref_src=twsrc%5Etfw">#blender</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/WIP?src=hash&amp;ref_src=twsrc%5Etfw">#WIP</a> <a target="_blank" rel="noopener" href="https://t.co/bWDCEcL8Qe">pic.twitter.com/bWDCEcL8Qe</a></p>&mdash; Shahzod Boyhonov 🔶️ (@specoolar) <a target="_blank" rel="noopener" href="https://twitter.com/specoolar/status/1662109900963446784?ref_src=twsrc%5Etfw">May 26, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We figured you needed to see LiquiGen today. The simulation, rendering, and meshing are all real-time. <a target="_blank" rel="noopener" href="https://t.co/QzgzSgeaF5">pic.twitter.com/QzgzSgeaF5</a></p>&mdash; JangaFX Software (@JangaFX) <a target="_blank" rel="noopener" href="https://twitter.com/JangaFX/status/1662176798858199042?ref_src=twsrc%5Etfw">May 26, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;you can&#39;t multiply vectors&quot; hold my tea<br><br>in my research into geometric algebra, I&#39;ve come up with a neat minimal starting assumption:<br><br>v² = ||v||² - a vector multiplied by itself is its length squared<br><br>it then follows that multiplying two vectors, gives you a quaternion c: <a target="_blank" rel="noopener" href="https://t.co/LzE6bOdhz6">pic.twitter.com/LzE6bOdhz6</a></p>&mdash; Freya Holmér (@FreyaHolmer) <a target="_blank" rel="noopener" href="https://twitter.com/FreyaHolmer/status/1662229911375953922?ref_src=twsrc%5Etfw">May 26, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">fake particles <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/MaterialMaker?src=hash&amp;ref_src=twsrc%5Etfw">#MaterialMaker</a> <a target="_blank" rel="noopener" href="https://t.co/8dcJZbR9pB">pic.twitter.com/8dcJZbR9pB</a></p>&mdash; celestialmaze (@cmzw_) <a target="_blank" rel="noopener" href="https://twitter.com/cmzw_/status/1662828587408592898?ref_src=twsrc%5Etfw">May 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Reposting this multi-layer shader made by <a target="_blank" rel="noopener" href="https://twitter.com/ushadersbible?ref_src=twsrc%5Etfw">@ushadersbible</a> that recreates cracked ice! ❄️ Any thoughts on its use? 👇<br><br>Learn unity shaders linearly; <a target="_blank" rel="noopener" href="https://t.co/E2niRCK1Ju">https://t.co/E2niRCK1Ju</a> 📚🚀<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiedev?src=hash&amp;ref_src=twsrc%5Etfw">#indiedev</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unity3d?src=hash&amp;ref_src=twsrc%5Etfw">#unity3d</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/unitytips?src=hash&amp;ref_src=twsrc%5Etfw">#unitytips</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA?src=hash&amp;ref_src=twsrc%5Etfw">#ゲーム開発</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/%E3%82%B2%E3%83%BC%E3%83%A0%E5%88%B6%E4%BD%9C?src=hash&amp;ref_src=twsrc%5Etfw">#ゲーム制作</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/screenshotsaturday?src=hash&amp;ref_src=twsrc%5Etfw">#screenshotsaturday</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/indiegames?src=hash&amp;ref_src=twsrc%5Etfw">#indiegames</a> <a target="_blank" rel="noopener" href="https://t.co/4LNqmd0T1y">pic.twitter.com/4LNqmd0T1y</a></p>&mdash; IndieGames 👾 (@Indiedev_Hub) <a target="_blank" rel="noopener" href="https://twitter.com/Indiedev_Hub/status/1662695896352534528?ref_src=twsrc%5Etfw">May 28, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/SuperAdventureHand?src=hash&amp;ref_src=twsrc%5Etfw">#SuperAdventureHand</a> started VS How it&#39;s going. 💪<br><br>You can play the demo and add the game to your wishlists here! 🎮<br>👉🏻 <a target="_blank" rel="noopener" href="https://t.co/Ng553GoAp6">https://t.co/Ng553GoAp6</a> 👈🏽<a target="_blank" rel="noopener" href="https://twitter.com/hashtag/wishlistwednesday?src=hash&amp;ref_src=twsrc%5Etfw">#wishlistwednesday</a> <a target="_blank" rel="noopener" href="https://twitter.com/hashtag/gamedev?src=hash&amp;ref_src=twsrc%5Etfw">#gamedev</a> <a target="_blank" rel="noopener" href="https://t.co/2aGDdkfsyg">pic.twitter.com/2aGDdkfsyg</a></p>&mdash; bright_gambit (@bright_gambit) <a target="_blank" rel="noopener" href="https://twitter.com/bright_gambit/status/1663877998397779968?ref_src=twsrc%5Etfw">May 31, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Got constraints working in a much more controlled way, without breaking from intense movement. Vehicle stuff is very early. Impressed by how well Chaos is handling this stuff! <a target="_blank" rel="noopener" href="https://t.co/2VLJoT1PAt">pic.twitter.com/2VLJoT1PAt</a></p>&mdash; Ev Schwab (@evelyn_schwab) <a target="_blank" rel="noopener" href="https://twitter.com/evelyn_schwab/status/1663555551635337217?ref_src=twsrc%5Etfw">May 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Nothing much - but for the sake of transparency and developing this game for, and with, you - we figured we wanted to start sharing more work in progress.<br><br>Here is a look at the weapon collision system. We intend to provide you with much more behind-the-scenes footage and other… <a target="_blank" rel="noopener" href="https://t.co/802wicVW7s">pic.twitter.com/802wicVW7s</a></p>&mdash; Blight: Survival (@BlightSurvival) <a target="_blank" rel="noopener" href="https://twitter.com/BlightSurvival/status/1661310212240703488?ref_src=twsrc%5Etfw">May 24, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<ul>
+<li>个人微信公众号： CG VisionTube</li>
+<li>注：学习交流使用！</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Technical-Art/">#Technical Art</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Technically Art: Issue 4 (2023.06.03)</div>
+      <div>http://example.com/2023/06/03/Technically-Art-Issue-4/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>朱士林</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 3, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/04/30/Technically-Art-Issue-3/" title="Technically Art: Issue 3 (2023.04.30)">
+                        <span class="hidden-mobile">Technically Art: Issue 3 (2023.04.30)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://vercel-kohl-ten.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Views: 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Visitors: 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
